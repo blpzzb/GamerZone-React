@@ -1,0 +1,193 @@
+body {
+  background-color: #111;
+  color: white;
+}
+
+.navbar-gamer {
+  background-color: #181818;
+  padding: 16px 0;
+  border-bottom: 1px solid #333;
+}
+
+.logo-gamer {
+  color: #a855f7;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo-gamer:hover {
+  color: #b96cf5;
+}
+
+.nav-link {
+  margin-left: 15px;
+}
+
+.hero {
+  background-color: #111;
+  padding: 80px 0;
+}
+
+.texto-morado {
+  color: #a855f7;
+}
+
+.texto-pequeno {
+  color: #a855f7;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero-texto,
+.texto-gris {
+  color: #aaa;
+}
+
+.hero-texto {
+  max-width: 500px;
+  font-size: 18px;
+}
+
+.hero-imagen {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.boton-gamer {
+  background-color: #9146c7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
+
+.boton-gamer:hover {
+  background-color: #a855f7;
+  color: white;
+}
+
+.productos {
+  background-color: #161616;
+  padding: 80px 0;
+}
+
+.producto-card {
+  background-color: #222;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.producto-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.producto-card .card-body {
+  padding: 22px;
+}
+
+.producto-card small {
+  color: #a855f7;
+}
+
+.producto-card .card-text {
+  color: #aaa;
+}
+
+.precio {
+  color: #c16cff;
+  margin-bottom: 18px;
+}
+
+.boton-producto {
+  background-color: #9146c7;
+  color: white;
+  width: 100%;
+}
+
+.boton-producto:hover {
+  background-color: #a855f7;
+  color: white;
+}
+
+.nosotros {
+  background-color: #111;
+  padding: 80px 0;
+}
+
+.nosotros-imagen {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.contacto {
+  background-color: #181818;
+  padding: 80px 0;
+}
+
+.formulario-contacto {
+  background-color: #222;
+  padding: 30px;
+  border: 1px solid #333;
+  border-radius: 10px;
+}
+
+.formulario-contacto .form-label {
+  color: #ddd;
+}
+
+.formulario-contacto .form-control {
+  background-color: #333;
+  border: 1px solid #555;
+  color: white;
+  padding: 10px;
+}
+
+.formulario-contacto .form-control::placeholder {
+  color: #999;
+}
+
+.footer-gamer {
+  background-color: #111;
+  color: #aaa;
+  padding: 40px 0;
+  border-top: 1px solid #333;
+}
+
+.logo-footer {
+  color: #a855f7;
+  font-weight: bold;
+}
+
+.texto-footer {
+  color: #777;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+    padding: 60px 0;
+  }
+
+  .hero-texto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-imagen {
+    height: 300px;
+  }
+
+  .productos,
+  .nosotros,
+  .contacto {
+    padding: 60px 0;
+  }
+}
