@@ -1,0 +1,23 @@
+.detalle-producto {
+  background-color: #161616;
+  min-height: 100vh;
+  padding: 80px 0;
+  color: white;
+}
+
+.imagen-detalle {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.detalle-producto .precio {
+  color: #c16cff;
+}
+
+@media (max-width: 768px) {
+  .detalle-producto {
+    padding: 60px 0;
+  }
+}

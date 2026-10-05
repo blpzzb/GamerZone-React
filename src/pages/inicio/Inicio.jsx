@@ -1,52 +1,16 @@
 import './Inicio.css'
+import Navbar from '../../components/Navbar.jsx'
+import ProductoCard from '../../components/ProductoCard.jsx'
+import productos from '../../data/productos.js'
 
 function Inicio() {
+  const productosDestacados = productos.filter(
+    (producto) => producto.destacado
+  )
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark navbar-gamer">
-        <div className="container">
-
-          <a className="navbar-brand logo-gamer" href="#">
-            GamerZone
-          </a>
-
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menuPrincipal"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-
-          <div
-            className="collapse navbar-collapse"
-            id="menuPrincipal"
-          >
-            <div className="navbar-nav ms-auto">
-
-              <a className="nav-link active" href="#">
-                Inicio
-              </a>
-
-              <a className="nav-link" href="#productos">
-                Productos
-              </a>
-
-              <a className="nav-link" href="#nosotros">
-                Nosotros
-              </a>
-
-              <a className="nav-link" href="#contacto">
-                Contacto
-              </a>
-
-            </div>
-          </div>
-
-        </div>
-      </nav>
-
+      <Navbar />
 
       <main>
 
@@ -92,7 +56,6 @@ function Inicio() {
 
               </div>
 
-
               <div className="col-lg-6 mt-4 mt-lg-0">
 
                 <img
@@ -130,124 +93,19 @@ function Inicio() {
 
             </div>
 
-
             <div className="row g-4">
 
-              <div className="col-md-4">
-
-                <div className="card producto-card h-100">
-
-                  <img
-                    src="/img/teclado.jpg"
-                    className="card-img-top"
-                    alt="Teclado gamer"
-                  />
-
-                  <div className="card-body">
-
-                    <small>
-                      PERIFÉRICOS
-                    </small>
-
-                    <h5 className="card-title mt-2">
-                      Teclado Mecánico RGB
-                    </h5>
-
-                    <p className="card-text">
-                      Teclado mecánico con iluminación RGB,
-                      ideal para gaming.
-                    </p>
-
-                    <h5 className="precio">
-                      $59.990
-                    </h5>
-
-                    <button className="btn boton-producto">
-                      Ver producto
-                    </button>
-
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div className="col-md-4">
-
-                <div className="card producto-card h-100">
-
-                  <img
-                    src="/img/mouse.jpg"
-                    className="card-img-top"
-                    alt="Mouse gamer"
-                  />
-
-                  <div className="card-body">
-
-                    <small>
-                      PERIFÉRICOS
-                    </small>
-
-                    <h5 className="card-title mt-2">
-                      Mouse Gamer RGB
-                    </h5>
-
-                    <p className="card-text">
-                      Mouse cómodo y preciso para jugar
-                      durante varias horas.
-                    </p>
-
-                    <h5 className="precio">
-                      $29.990
-                    </h5>
-
-                    <button className="btn boton-producto">
-                      Ver producto
-                    </button>
-
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div className="col-md-4">
-
-                <div className="card producto-card h-100">
-
-                  <img
-                    src="/img/monitor.jpg"
-                    className="card-img-top"
-                    alt="Monitor gamer"
-                  />
-
-                  <div className="card-body">
-
-                    <small>
-                      MONITORES
-                    </small>
-
-                    <h5 className="card-title mt-2">
-                      Monitor Gamer 165 Hz
-                    </h5>
-
-                    <p className="card-text">
-                      Monitor pensado para disfrutar una imagen
-                      más fluida al jugar.
-                    </p>
-
-                    <h5 className="precio">
-                      $199.990
-                    </h5>
-
-                    <button className="btn boton-producto">
-                      Ver producto
-                    </button>
-
-                  </div>
-
-                </div>
-              </div>
+              {productosDestacados.map((producto) => (
+                <ProductoCard
+                  key={producto.id}
+                  id={producto.id}
+                  imagen={producto.imagen}
+                  categoria={producto.categoria}
+                  nombre={producto.nombre}
+                  descripcion={producto.descripcion}
+                  precio={`$${producto.precio.toLocaleString('es-CL')}`}
+                />
+              ))}
 
             </div>
 
@@ -271,7 +129,6 @@ function Inicio() {
                 />
 
               </div>
-
 
               <div className="col-md-6">
 
@@ -329,7 +186,6 @@ function Inicio() {
 
             </div>
 
-
             <div className="row justify-content-center">
 
               <div className="col-lg-7">
@@ -352,7 +208,6 @@ function Inicio() {
 
                     </div>
 
-
                     <div className="col-md-6 mb-3">
 
                       <label className="form-label">
@@ -369,7 +224,6 @@ function Inicio() {
 
                   </div>
 
-
                   <div className="mb-3">
 
                     <label className="form-label">
@@ -384,7 +238,6 @@ function Inicio() {
 
                   </div>
 
-
                   <div className="mb-4">
 
                     <label className="form-label">
@@ -398,7 +251,6 @@ function Inicio() {
                     ></textarea>
 
                   </div>
-
 
                   <button
                     type="submit"
@@ -417,7 +269,6 @@ function Inicio() {
         </section>
 
       </main>
-
 
       <footer className="footer-gamer">
 

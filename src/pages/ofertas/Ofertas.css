@@ -1,0 +1,12 @@
+.pagina-ofertas {
+  background-color: #161616;
+  min-height: 100vh;
+  padding: 80px 0;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .pagina-ofertas {
+    padding: 60px 0;
+  }
+}
