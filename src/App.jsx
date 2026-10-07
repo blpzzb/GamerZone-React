@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Inicio from './pages/inicio/Inicio.jsx'
@@ -10,9 +10,33 @@ import Carrito from './pages/carrito/Carrito.jsx'
 import Checkout from './pages/checkout/Checkout.jsx'
 import PagoExitoso from './pages/pagoExitoso/PagoExitoso.jsx'
 import PagoFallido from './pages/pagoFallido/PagoFallido.jsx'
+import AdminProductos from './pages/adminProductos/AdminProductos.jsx'
+import Registro from './pages/registro/Registro.jsx'
+import Login from './pages/login/Login.jsx'
+import Blogs from './pages/blogs/Blogs.jsx'
+import DetalleBlog from './pages/detalleBlog/DetalleBlog.jsx'
+
+import productosIniciales from './data/productos.js'
 
 function App() {
   const [carrito, setCarrito] = useState([])
+
+  const [productos, setProductos] = useState(() => {
+    const productosGuardados = localStorage.getItem('productos')
+
+    if (productosGuardados) {
+      return JSON.parse(productosGuardados)
+    }
+
+    return productosIniciales
+  })
+
+  useEffect(() => {
+    localStorage.setItem(
+      'productos',
+      JSON.stringify(productos)
+    )
+  }, [productos])
 
   function agregarAlCarrito(producto) {
     const productoExiste = carrito.find(
@@ -72,18 +96,23 @@ function App() {
 
         <Route
           path="/"
-          element={<Inicio />}
+          element={
+            <Inicio productos={productos} />
+          }
         />
 
         <Route
           path="/productos"
-          element={<Productos />}
+          element={
+            <Productos productos={productos} />
+          }
         />
 
         <Route
           path="/productos/:id"
           element={
             <DetalleProducto
+              productos={productos}
               agregarAlCarrito={agregarAlCarrito}
             />
           }
@@ -91,12 +120,16 @@ function App() {
 
         <Route
           path="/categorias"
-          element={<Categorias />}
+          element={
+            <Categorias productos={productos} />
+          }
         />
 
         <Route
           path="/ofertas"
-          element={<Ofertas />}
+          element={
+            <Ofertas productos={productos} />
+          }
         />
 
         <Route
@@ -114,20 +147,60 @@ function App() {
         <Route
           path="/checkout"
           element={
-            <Checkout
-              carrito={carrito}
-            />
+            <Checkout carrito={carrito} />
           }
         />
 
         <Route
           path="/pago-exitoso"
-          element={<PagoExitoso />}
+          element={
+            <PagoExitoso />
+          }
         />
 
         <Route
           path="/pago-fallido"
-          element={<PagoFallido />}
+          element={
+            <PagoFallido />
+          }
+        />
+
+        <Route
+          path="/registro"
+          element={
+            <Registro />
+          }
+        />
+
+        <Route
+          path="/login"
+          element={
+            <Login />
+          }
+        />
+
+        <Route
+          path="/blogs"
+          element={
+            <Blogs />
+          }
+        />
+
+        <Route
+          path="/blogs/:id"
+          element={
+            <DetalleBlog />
+          }
+        />
+
+        <Route
+          path="/admin/productos"
+          element={
+            <AdminProductos
+              productos={productos}
+              setProductos={setProductos}
+            />
+          }
         />
 
       </Routes>

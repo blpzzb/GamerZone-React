@@ -1,0 +1,45 @@
+.pagina-admin {
+  background-color: #161616;
+  min-height: 100vh;
+  padding: 80px 0;
+  color: white;
+}
+
+.formulario-admin {
+  background-color: #222;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.formulario-admin .form-label {
+  color: #ddd;
+}
+
+.formulario-admin .form-control {
+  background-color: #333;
+  border: 1px solid #555;
+  color: white;
+}
+
+.formulario-admin .form-control::placeholder {
+  color: #999;
+}
+
+.formulario-admin .form-check-label {
+  color: #ddd;
+}
+
+.pagina-admin .table {
+  margin-bottom: 0;
+}
+
+.pagina-admin th {
+  color: #c16cff;
+}
+
+@media (max-width: 768px) {
+  .pagina-admin {
+    padding: 60px 0;
+  }
+}

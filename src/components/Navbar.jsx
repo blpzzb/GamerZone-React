@@ -5,9 +5,13 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark navbar-gamer">
       <div className="container">
 
-        <Link className="navbar-brand logo-gamer" to="/">
+        <Link
+          className="navbar-brand logo-gamer"
+          to="/"
+        >
           GamerZone
         </Link>
+
 
         <button
           className="navbar-toggler"
@@ -18,41 +22,86 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
+
         <div
           className="collapse navbar-collapse"
           id="menuPrincipal"
         >
+
           <div className="navbar-nav ms-auto">
 
-            <Link className="nav-link" to="/">
+            <Link
+              className="nav-link"
+              to="/"
+            >
               Inicio
             </Link>
 
-            <Link className="nav-link" to="/productos">
+            <Link
+              className="nav-link"
+              to="/productos"
+            >
               Productos
             </Link>
 
-            <Link className="nav-link" to="/categorias">
+            <Link
+              className="nav-link"
+              to="/categorias"
+            >
               Categorías
             </Link>
 
-            <Link className="nav-link" to="/ofertas">
+            <Link
+              className="nav-link"
+              to="/ofertas"
+            >
               Ofertas
             </Link>
 
-            <Link className="nav-link" to="/carrito">
+            <Link
+              className="nav-link"
+              to="/blogs"
+            >
+              Blogs
+            </Link>
+
+            <Link
+              className="nav-link"
+              to="/carrito"
+            >
               Carrito
             </Link>
 
-            <a className="nav-link" href="/#nosotros">
+            <a
+              className="nav-link"
+              href="/#nosotros"
+            >
               Nosotros
             </a>
 
-            <a className="nav-link" href="/#contacto">
+            <a
+              className="nav-link"
+              href="/#contacto"
+            >
               Contacto
             </a>
 
+            <Link
+              className="nav-link"
+              to="/login"
+            >
+              Iniciar sesión
+            </Link>
+
+            <Link
+              className="nav-link"
+              to="/registro"
+            >
+              Registro
+            </Link>
+
           </div>
+
         </div>
 
       </div>

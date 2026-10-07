@@ -1,0 +1,13 @@
+{
+  "extension": [
+    ".js",
+    ".jsx"
+  ],
+  "include": [
+    "src/**/*.jsx"
+  ],
+  "exclude": [
+    "src/**/*.test.js"
+  ],
+  "cache": false
+}

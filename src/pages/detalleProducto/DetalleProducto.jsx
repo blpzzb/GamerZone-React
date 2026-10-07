@@ -1,9 +1,8 @@
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import './DetalleProducto.css'
 import Navbar from '../../components/Navbar.jsx'
-import productos from '../../data/productos.js'
 
-function DetalleProducto({ agregarAlCarrito }) {
+function DetalleProducto({ productos, agregarAlCarrito }) {
   const { id } = useParams()
   const navigate = useNavigate()
 
@@ -11,56 +10,59 @@ function DetalleProducto({ agregarAlCarrito }) {
     (producto) => producto.id === Number(id)
   )
 
-  function agregarProducto() {
-    agregarAlCarrito(producto)
-    navigate('/carrito')
-  }
-
   if (!producto) {
     return (
       <>
         <Navbar />
 
-        <main className="detalle-producto">
+        <main className="pagina-detalle">
           <div className="container text-center">
-            <h1>Producto no encontrado</h1>
+            <h2>Producto no encontrado</h2>
 
-            <Link
-              to="/productos"
+            <button
               className="btn boton-gamer mt-3"
+              onClick={() => navigate('/productos')}
             >
               Volver a productos
-            </Link>
+            </button>
           </div>
         </main>
       </>
     )
   }
 
+  function agregarProducto() {
+    agregarAlCarrito(producto)
+    navigate('/carrito')
+  }
+
   return (
     <>
       <Navbar />
 
-      <main className="detalle-producto">
+      <main className="pagina-detalle">
         <div className="container">
 
           <div className="row align-items-center">
 
-            <div className="col-md-6 mb-4 mb-md-0">
+            <div className="col-lg-6 mb-4 mb-lg-0">
+
               <img
                 src={producto.imagen}
-                className="img-fluid imagen-detalle"
                 alt={producto.nombre}
+                className="img-fluid detalle-imagen"
               />
+
             </div>
 
-            <div className="col-md-6">
+
+            <div className="col-lg-6">
 
               <p className="texto-pequeno">
                 {producto.categoria}
               </p>
 
-              <h1 className="fw-bold">
+              <h1 className="fw-bold mb-3">
                 {producto.nombre}
               </h1>
 
@@ -68,23 +70,16 @@ function DetalleProducto({ agregarAlCarrito }) {
                 {producto.descripcion}
               </p>
 
-              <h3 className="precio mb-4">
+              <h2 className="precio mb-4">
                 ${producto.precio.toLocaleString('es-CL')}
-              </h3>
+              </h2>
 
               <button
-                className="btn boton-gamer me-2"
+                className="btn boton-gamer"
                 onClick={agregarProducto}
               >
                 Agregar al carrito
               </button>
-
-              <Link
-                to="/productos"
-                className="btn btn-outline-light"
-              >
-                Volver
-              </Link>
 
             </div>
 

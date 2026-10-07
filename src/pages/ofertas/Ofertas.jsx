@@ -1,9 +1,8 @@
 import './Ofertas.css'
 import Navbar from '../../components/Navbar.jsx'
 import ProductoCard from '../../components/ProductoCard.jsx'
-import productos from '../../data/productos.js'
 
-function Ofertas() {
+function Ofertas({ productos }) {
   const productosOferta = productos.filter(
     (producto) => producto.oferta
   )

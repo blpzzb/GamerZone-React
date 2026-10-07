@@ -2,9 +2,8 @@ import { useState } from 'react'
 import './Categorias.css'
 import Navbar from '../../components/Navbar.jsx'
 import ProductoCard from '../../components/ProductoCard.jsx'
-import productos from '../../data/productos.js'
 
-function Categorias() {
+function Categorias({ productos }) {
   const [categoria, setCategoria] = useState('Todos')
 
   const productosFiltrados =

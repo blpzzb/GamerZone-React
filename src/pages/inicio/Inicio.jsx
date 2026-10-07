@@ -1,9 +1,8 @@
 import './Inicio.css'
 import Navbar from '../../components/Navbar.jsx'
 import ProductoCard from '../../components/ProductoCard.jsx'
-import productos from '../../data/productos.js'
 
-function Inicio() {
+function Inicio({ productos }) {
   const productosDestacados = productos.filter(
     (producto) => producto.destacado
   )
@@ -56,6 +55,7 @@ function Inicio() {
 
               </div>
 
+
               <div className="col-lg-6 mt-4 mt-lg-0">
 
                 <img
@@ -93,6 +93,7 @@ function Inicio() {
 
             </div>
 
+
             <div className="row g-4">
 
               {productosDestacados.map((producto) => (
@@ -129,6 +130,7 @@ function Inicio() {
                 />
 
               </div>
+
 
               <div className="col-md-6">
 
@@ -186,6 +188,7 @@ function Inicio() {
 
             </div>
 
+
             <div className="row justify-content-center">
 
               <div className="col-lg-7">
@@ -208,6 +211,7 @@ function Inicio() {
 
                     </div>
 
+
                     <div className="col-md-6 mb-3">
 
                       <label className="form-label">
@@ -224,6 +228,7 @@ function Inicio() {
 
                   </div>
 
+
                   <div className="mb-3">
 
                     <label className="form-label">
@@ -238,6 +243,7 @@ function Inicio() {
 
                   </div>
 
+
                   <div className="mb-4">
 
                     <label className="form-label">
@@ -251,6 +257,7 @@ function Inicio() {
                     ></textarea>
 
                   </div>
+
 
                   <button
                     type="submit"
@@ -269,6 +276,7 @@ function Inicio() {
         </section>
 
       </main>
+
 
       <footer className="footer-gamer">
 

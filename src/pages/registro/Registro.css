@@ -1,0 +1,48 @@
+.pagina-registro {
+  background-color: #161616;
+  min-height: 100vh;
+  padding: 80px 0;
+  color: white;
+}
+
+.registro-card {
+  background-color: #222;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 35px;
+}
+
+.registro-card .form-label {
+  color: #ddd;
+}
+
+.registro-card .form-control {
+  background-color: #333;
+  border: 1px solid #555;
+  color: white;
+}
+
+.registro-card .form-control:focus {
+  background-color: #333;
+  color: white;
+  border-color: #9146c7;
+  box-shadow: none;
+}
+
+.registro-card .form-control::placeholder {
+  color: #999;
+}
+
+.mensaje-registro {
+  color: #c16cff;
+}
+
+@media (max-width: 768px) {
+  .pagina-registro {
+    padding: 60px 0;
+  }
+
+  .registro-card {
+    padding: 25px;
+  }
+}

@@ -2,9 +2,8 @@ import { useState } from 'react'
 import './Productos.css'
 import Navbar from '../../components/Navbar.jsx'
 import ProductoCard from '../../components/ProductoCard.jsx'
-import productos from '../../data/productos.js'
 
-function Productos() {
+function Productos({ productos }) {
   const [busqueda, setBusqueda] = useState('')
 
   const productosFiltrados = productos.filter((producto) =>
